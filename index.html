@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CDI&CO – Céline Galmard</title>
+  <meta name="description" content="CDI&CO" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f5f5;
+      color: #333;
+      line-height: 1.6;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="15" cy="15" r="3" fill="%23e8caca" opacity="0.3"/><circle cx="85" cy="85" r="3" fill="%23e8caca" opacity="0.3"/></svg>');
+      background-repeat: repeat;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M100 20 C60 20, 20 60, 20 100 C20 140, 60 180, 100 180 C140 180, 180 140, 180 100 C180 60, 140 20, 100 20" fill="none" stroke="%23e8caca" stroke-width="1.5" opacity="0.6"/><path d="M100 50 L100 80" stroke="%23e8caca" stroke-width="1.5" opacity="0.6"/><circle cx="100" cy="100" r="45" fill="none" stroke="%23e8caca" stroke-width="1.5" opacity="0.6"/></svg>') no-repeat center center;
+      background-size: 180px;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    .logo-img {
+      width: 140px;
+      height: auto;
+      margin-bottom: 1.5rem;
+      filer: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+    .title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5rem;
+      color: #5d4037;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #8d6e63;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .tagline {
+      margin-top: 0.8rem;
+      font-size: 1rem;
+      color: #a1887f;
+      font-style: italic;
+    }
+
+    /* SECTIONS GÉNÉRALES */
+    section {
+      padding: 3rem 0;
+      background: white;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5rem;
+      color: #6d4c41;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /* === NOUVELLE PRÉSENTATION EN CARTES === */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+    .card {
+      background: #fdf7f7;
+      padding: 1.8rem 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }
+    .card h3 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      color: #6d4c41;
+      margin-bottom: 0.8rem;
+    }
+    .card p {
+      color: #5d4037;
+      font-size: 0.95rem;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      padding: 2rem 0;
+      background: #fdf7f7;
+    }
+    .contact a {
+      color: #8d6e63;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 1rem;
+      transition: color 0.3s;
+    }
+    .contact a:hover { color: #5d4037; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #a1887f;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .title { font-size: 2.8rem; }
+      .logo-img { width: 110px; }
+      h2 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <img src="Logo.png" alt="Logo CDI&CO" class="logo-img" />
+      <h1 class="title">CDI&CO</h1>
+      <p class="subtitle">Collaboratrice Digitale Indépendante & COnseils</p>
+      <p class="tagline">Planning • Gestion e-mails • Process • Relais pro</p>
+      <p class="subtitle">Je m’occupe du chaos administratif pour que vous puissiez rester dans votre énergie.</p>
+    </div>
+  </header>
+
+  <!-- SERVICES EN CARTES -->
+  <section class="container">
+    <h2>Mes services</h2>
+    <div class="services-grid">
+      <div class="card">
+        <h3>Optimisez Votre Temps – Gagnez en Efficacité !</h3>
+        <p>Concentrez-vous sur l’essentiel, Fini les heures perdues en paperasse, je vous libère des tâches chronophages pour que vous puissiez vous concentrer sur l’essentiel.</p>
+      </div>
+      <div class="card">
+        <h3>Planning partagé</h3>
+        <p>Outil collaboratif sécurisé avec droits personnalisés pour ne rien oublier.</p>
+      </div>
+      <div class="card">
+        <h3>Archivage numérique</h3>
+        <p>Arborescence sur mesure, claire et évolutive, adaptée à vos besoins.</p>
+      </div>
+      <div class="card">
+        <h3>Relais Professionnel – Continuité Garantie !</h3>
+        <p>Absence, congé, pic d'activité ou surcharge temporaire ? Vous restez serein, tout continue comme d'habitude. Je prends le relais de votre administratif pour que votre activité ne s'arrête jamais.</p>
+      </div>
+      <div class="card">
+       <h3>Lien Parfait – Clients, Fournisseurs, Sous-traitants</h3>
+       <p>Plus de mails perdus, de doublons ou de retards : tout circule parfaitement. Je deviens votre interface unique et fluide entre vous, vos clients, fournisseurs et sous-traitants.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <div class="container">
+      <p class="subtitle">Prêt(e) à tester ? On fait un point gratuit 20 min pour voir exactement ce que je peux déjà enlever de votre tête cette semaine.</p>
+      <p>
+        <a href="tel:0756940207">07 56 94 02 07</a> • 
+        <a href="mailto:gestion@cdi-co.fr">gestion@cdi-co.fr</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2025 CDI&CO – Tous droits réservés</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
